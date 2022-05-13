@@ -1,0 +1,27 @@
+{
+  "name": "cadastro-cliente",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Projeto academino desenvolvido nas aulas de Técnicas Avançadas de Programação Web ministrada pelo professor Ícaro",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VictorCaique/Cadastro-Cliente.git"
+  },
+  "author": "Victor Caique",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VictorCaique/Cadastro-Cliente/issues"
+  },
+  "homepage": "https://github.com/VictorCaique/Cadastro-Cliente#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "consign": "^0.1.6",
+    "ejs": "^3.1.8",
+    "sha1": "^1.1.1"
+  }
+}
