@@ -88,3 +88,15 @@ app.get('delete/usuario/:id', async (req, res, next) => {
         next(err);
     }
 });
+
+app.get('edit/usuario/:id', async (req, res, next) => {
+    try {
+        var id = req.params.id;
+        await usuarioBanco.deleteUsuario(id);
+        const docs = await usuarioBanco.selectUsuario();
+        res.render('usuario/EditUsuario', { mensagem: 'usuario excluiodo com sucesso', docs });
+    } catch (err) {
+        next(err);
+    }
+});
+
