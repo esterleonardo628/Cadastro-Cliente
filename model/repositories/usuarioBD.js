@@ -32,7 +32,7 @@ async function login(nome, senha){
 
 async function inserUsuario(usuario){
     const conn = await usuarioBD.connect();
-    const sql = 'INSERT INTO usuario(nome, senha) VALUES(?,?);';
+    const sql = 'UPDATE usuario SET nome=? , senha=? WHERE id=?);';
     const values =  [usuario.nome, seguranca.ocultarSenha(usuario.senha)];
     return  await conn.query(sql, values);
 }
@@ -41,4 +41,12 @@ async function deleteUsuario(id){
     const conn = await usuarioBD.connect();
     const sql = 'DELETE FROM usuario where id=?;';
     return  await conn.query(sql, [id]);
+}
+
+module.exports = {
+    selectUsuario,
+    getUsuarioId,
+    login,
+    inserUsuario,
+    deleteUsuario
 }

@@ -20,4 +20,16 @@ module.exports = function (app) {
             res.render('/login/?fail=true');
         }   
     });
+
+    app.get("/cadastro", function(req, res) {
+        if(req.query.fail) {
+            res.render('usuario/Cadastro', {
+                mensagem: 'Cadastro'
+            });
+        } else {
+            res.render('usuario/Cadastro', {
+                mensagem: null 
+            });
+        }
+    })
 }
