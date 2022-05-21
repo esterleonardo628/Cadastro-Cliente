@@ -50,3 +50,18 @@ module.exports = {
     inserUsuario,
     deleteUsuario
 }
+
+app.post('/cadastro/usuario/edit/salvar', (req, res) => {
+    var usuario = {nome: req.body.nome, 
+    senha: req.body.senha,
+    id: req.body.id};
+
+    try {
+        usuarioBanco.updateUsuario(usuario);
+        res.render('usuario/Sucesso', { mensagem: 'alterado'});
+    }catch (error) {
+        res.render('usuario/EditUsuario', { title: 'Edição Cadastro',
+    mensagem: 'Erro no cadastrado'});
+    }
+
+});
